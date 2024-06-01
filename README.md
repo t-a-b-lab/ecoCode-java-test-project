@@ -27,8 +27,12 @@ Step 3 : send Sonar metrics to local SonarQube
 
 or
 
+```sh
 mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.1.2184:sonar -Dsonar.login=MY_SONAR_TOKEN
+
+or (using docker)
 ```
+ docker run --rm -e SONAR_HOST_URL="http://sonar:9000" -v "./:/usr/src" --network ecocode-ios_sonarnet sonarsource/sonar-scanner-cli
 
 Step 4 : check errors
 ---
